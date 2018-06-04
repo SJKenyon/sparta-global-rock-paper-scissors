@@ -1,20 +1,24 @@
-# Sparta Global
-Rock, Paper, Scissors - Homework
+# Rock, Paper, Scissors
 
-Your homework is to create the game Rock Paper Scissors game against the computer in the browser using alerts and prompts.
-
-Rules of the Game
-
-There are a few basic rules to the game:-
+## Rules of the Game:
 
 Rock beats Scissors
 Paper beats Rock
 Scissors beats Paper
+User wins on same choice
 
-You will need to:-
+### Creation
 
-Get the player input through the browser
-Create a random move for the computer
-You should play the best of five rounds between the player and the computer
-You will need to check for a winner after each round
-You should display the score after each round
+I used prompts and alerts to create the layout for the game.
+
+``` javascript
+var choice = prompt("Choose your option:"+"\n"+"r = rock"+"\n"+"p = paper"+"\n"+"s = scissors");
+```
+
+It gets an input from the user through the browser and compares their choice to a randomly generated choice from the computer. There are 5 rounds and the score/outcome will be displayed at the end.
+
+---
+
+### Cloning
+
+This game does not need any additional files installing.

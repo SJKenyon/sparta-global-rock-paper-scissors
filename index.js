@@ -1,77 +1,76 @@
-//alert("Test")
+//1 - rock 2 - paper 3 - scissors
 
-//KEY
-//1 - rock
-//2 - paper
-//3 - scissors
-
-var c = 0;
-var u = 0;
+var c = 0; //computer points
+var u = 0; //user points
 alert("RULES:"+"\n"+"- Rock beats Scissors"+"\n"+"- Paper beats Rock"+"\n"+"- Scissors beats Paper")
+
+function winAlert(){
+  alert("Computer chose " + computerOutput + " , YOU WIN!");
+  c++;
+  return c;
+}
+function loseAlert(){
+  alert("Computer chose " + computerOutput + " , YOU LOSE!");
+  u++;
+  return u;
+}
+
+function randomizer(){
+  var x = Math.floor((Math.random() * 3) + 1);
+  console.log(x);
+  return x;
+}
+
+function computerChoice(){
+  if(x == 1){
+    var cOutput = "rock";
+  }else if(x == 2){
+    var cOutput = "paper";
+  }else{
+    var cOutput = "scissors";
+  }
+  return cOutput;
+}
 
 for(var i = 0; i < 5; i++) {
   var choice = prompt("Choose your option:"+"\n"+"r = rock"+"\n"+"p = paper"+"\n"+"s = scissors");
+  var x = randomizer();
+
+  var computerOutput = computerChoice();
+
+  var win = winAlert;
+
+  var lose = loseAlert;
 
   if(choice == "r"){
-    //RANDOMIZER
-    var x = Math.floor((Math.random() * 3) + 1);
-    console.log(x);
-    //RANDOMIZER
 
     //ALERT+POINTS
-    if(x == 1){
-      alert("Computer chose rock, YOU LOSE!");
-      c++;
-    }else if(x == 2){
-      alert("Computer chose paper, YOU LOSE!");
-      c++;
+    if(x == 1 || x == 2){
+      loseAlert();
     }else{
-      alert("Computer chose scissors, YOU WIN!");
-      u++;
+      winAlert();
     }
     //ALERT+POINTS
 
   }else if(choice == "s"){
 
-    //RANDOMIZER
-    var x = Math.floor((Math.random() * 3) + 1);
-    console.log(x);
-    //RANDOMIZER
-
     //ALERT+POINTS
-    if(x == 1){
-      alert("Computer chose rock, YOU LOSE!");
-      c++;
-    }else if(x == 2){
-      alert("Computer chose paper, YOU WIN!");
-      u++;
+    if(x == 2 || x == 3){
+      loseAlert();
     }else{
-      alert("Computer chose scissors, YOU LOSE!");
-      c++;
+      winAlert();
     }
     //ALERT+POINTS
-
   }else if(choice == "p"){
-
-    //RANDOMIZER
-    var x = Math.floor((Math.random() * 3) + 1);
-    console.log(x);
-    //RANDOMIZER
-
     //ALERT+POINTS
-    if(x == 1){
-      alert("Computer chose rock, YOU WIN!");
-      u++;
-    }else if(x == 2){
-      alert("Computer chose paper, YOU LOSE!");
-      c++;
+    if(x == 1 || x == 3){
+      loseAlert();
     }else{
-      alert("Computer chose scissors, YOU LOSE!");
-      c++;
+      winAlert();
     }
     //ALERT+POINTS
-
   }else{
+    i--;
     alert("ERROR!");
   }
 }
